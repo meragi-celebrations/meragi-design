@@ -9,12 +9,23 @@ export default {
 
 // Create a master template for mapping args to render the Button component
 const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Test</Button>
+  <Button {...args} onClick={() => {}} />
 )
 
 // Reuse that template for creating different stories
 export const Primary = Template.bind({})
-Primary.args = { children: "Primary 😃", type: "primary" }
+Primary.args = {
+  children: "Primary 😃",
+  type: "primary",
+  size: "lg",
+  disabled: true,
+}
 
 export const Secondary = Template.bind({})
 Secondary.args = { children: "Secondary 😇" }
+
+export const Danger = Template.bind({})
+Danger.args = { children: "Danger", type: "danger" }
+
+export const Outlined = Template.bind({})
+Outlined.args = { children: "Outlined", outlined: true }
