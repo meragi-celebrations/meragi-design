@@ -48,5 +48,8 @@
   "main": "lib/index.js",
   "typings": "src/index",
   "module": "lib/index.esm.js",
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "react-icons": "^4.8.0"
+  }
 }
