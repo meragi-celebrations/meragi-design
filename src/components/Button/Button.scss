@@ -1,10 +1,11 @@
+@import "../../variables";
 .btn {
     .my-button {
         padding: 8px 16px;
         font-size: 16px;
         border-radius: 4px;
         border: none;
-        background-color: #4caf50;
+        background-color: $primary-color;
         color: #ffffff;
         cursor: pointer;
       
