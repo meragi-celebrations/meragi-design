@@ -1,0 +1,32 @@
+.btn .my-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #4caf50;
+  color: #ffffff;
+  cursor: pointer;
+}
+.btn .my-button:hover {
+  background-color: #3e8e41;
+}
+.btn .my-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
+}
+.btn .my-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn .my-button.small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.btn .my-button.medium {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+.btn .my-button.large {
+  padding: 12px 24px;
+  font-size: 20px;
+}
