@@ -1,9 +1,11 @@
 @import "../../variables";
 .text {
     font-family: $font-family;
-    font-size: 16px;
-    line-height: 24px;
-    color: $text-color;
+
+    &.body {
+        font-size: 16px;
+        line-height: 24px;
+      }
   
     &.h1 {
       font-size: 35px;
@@ -51,6 +53,9 @@
         font-weight: 600;
         letter-spacing: -0.003em;
         margin-top: 16px;
+    }
+    &.error {
+        font-size: .8rem;
     }
     &.code {
         font-family: $font-family-monospaced;

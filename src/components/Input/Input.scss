@@ -1,0 +1,93 @@
+@import '../../variables';
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    position: relative;
+
+    .required-indicator {
+        color: red;
+        margin-left: 5px;
+      }
+    
+      .error-message {
+        color: red;
+        font-size: 0.8rem;
+      }
+  
+    /* Position label on top */
+    &.top {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      .input-label {
+        margin-bottom: 8px;
+      }
+  
+      .input-field {
+        width: 100%;
+      }
+
+      .error-message {
+        margin-top: 4px
+      }
+    }
+  
+    /* Position label on the side */
+    &.side {
+      flex-direction: row;
+      align-items: center;
+  
+      .input-label {
+        margin-right: 16px;
+      }
+  
+      .input-field {
+        flex-grow: 1;
+      }
+
+      .error-message {
+        margin-left: 4px
+      }
+    }
+  
+    .input-label {
+      font-weight: bold;
+    }
+  
+    .input-field {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+      font-size: 14px;
+      color: #333;
+
+      &.error {
+        border: 1px solid red;
+      }
+  
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+
+    .input-field-container {
+        position: relative;
+
+        .char-count {
+            color: gray;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 0.25rem;
+          }
+    }
+
+    
+  }
+  
