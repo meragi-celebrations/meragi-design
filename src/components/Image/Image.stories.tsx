@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Image>
 
 export const Default: Story = {
   args: {
-    src: 'https://dummyimage.com/600x400/000/fff',
+    src: 'https://picsum.photos/600/400',
     alt: 'Example Image',
   },
 }

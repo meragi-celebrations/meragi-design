@@ -166,6 +166,26 @@ $tertiary-disable: rgba($tertiary, $disable);
 $tertiary-focus: rgba($tertiary, $focus);
 $tertiary-hover: rgba($tertiary, $hover);
 
+$danger-enable: rgba($danger, $enable);
+$danger-disable: rgba($danger, $disable);
+$danger-focus: rgba($danger, $focus);
+$danger-hover: rgba($danger, $hover);
+
+$success-enable: rgba($success, $enable);
+$success-disable: rgba($success, $disable);
+$success-focus: rgba($success, $focus);
+$success-hover: rgba($success, $hover);
+
+$warning-enable: rgba($warning, $enable);
+$warning-disable: rgba($warning, $disable);
+$warning-focus: rgba($warning, $focus);
+$warning-hover: rgba($warning, $hover);
+
+$info-enable: rgba($info, $enable);
+$info-disable: rgba($info, $disable);
+$info-focus: rgba($info, $focus);
+$info-hover: rgba($info, $hover);
+
 // Generate text color
 $text-dark: #0b0514;
 $text-light: #ffffff;

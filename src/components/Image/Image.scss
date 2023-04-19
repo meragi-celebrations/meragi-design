@@ -17,6 +17,10 @@
     display: block;
     max-width: 100%;
     height: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
   
   &.hidden img {

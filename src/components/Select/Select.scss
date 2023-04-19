@@ -1,7 +1,8 @@
 @import '../../variables';
+@import '../../colors';
 
 $indicator-padding: 2px;
-$multi-select-value-background-color: #e9e0f8;
+$multi-select-value-background-color: $purple-10;
 
 .select__option {
     font-family: $font-family;

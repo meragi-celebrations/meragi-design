@@ -57,29 +57,56 @@
   }
 
   &.secondary {
-    background-color: $secondary-color;
-    color: #413f3f;
+    background-color: $secondary;
+    color: get-contrast-color($secondary);
 
     &:hover:enabled {
-      background-color: $secondary-hover-color;
+      background-color: $secondary-hover;
+    }
+  }
+
+  &.tertiary {
+    background-color: $tertiary;
+    color: get-contrast-color($tertiary);
+
+    &:hover:enabled {
+      background-color: $tertiary-hover;
     }
   }
 
   &.danger {
-    background-color: #dc3545;
-    color: #fff;
+    background-color: $danger;
+    color: get-contrast-color($danger);
 
     &:hover:enabled {
-      background-color: #c82333;
+      background-color: $danger-hover;
     }
   }
 
   &.success {
-    background-color: #4edc35;
-    color: #fff;
+    background-color: $success;
+    color: get-contrast-color($success);
 
     &:hover:enabled {
-      background-color: #3dab2a;
+      background-color: $success-hover;
+    }
+  }
+
+  &.warning {
+    background-color: $warning;
+    color: get-contrast-color($warning);
+
+    &:hover:enabled {
+      background-color: $warning-hover;
+    }
+  }
+
+  &.info {
+    background-color: $info;
+    color: get-contrast-color($info);
+
+    &:hover:enabled {
+      background-color: $info-hover;
     }
   }
 
