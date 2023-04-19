@@ -5,7 +5,7 @@ import './Button.scss'
 
 export interface ButtonProps
   extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
-  children: React.ReactNode
+  children?: React.ReactNode
   type?: 'default' | 'primary' | 'secondary' | 'danger' | 'success'
   size?: 'small' | 'medium' | 'large'
   circular?: boolean
