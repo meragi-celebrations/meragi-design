@@ -1,18 +1,21 @@
 @import '../../colors';
 
 .divider {
-    background-color: $border-color;
+  background-color: $border-color;
 
-    &.horizontal {
-        height: 1px;
-        margin: 1rem 0;
-        width: 100%;
-      }
-      
-      &.vertical {
-        height: 100%;
-        margin: 0 1rem;
-        width: 1px;
-      }
+  &[data-orientation='horizontal'] {
+    height: 1px;
+    width: 100%;
+    &.margin {
+      margin: 15px 0;
+    }
   }
-  
+  &[data-orientation='vertical'] {
+    height: 100%;
+    width: 1px;
+    &.margin {
+      margin: 0 15px;
+    }
+  }
+
+}
