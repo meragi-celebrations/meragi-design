@@ -57,11 +57,11 @@
   }
 
   &.secondary {
-    background-color: $secondary-color;
+    background-color: $secondary;
     color: #413f3f;
 
     &:hover:enabled {
-      background-color: $secondary-hover-color;
+      background-color: $secondary-hover;
     }
   }
 
