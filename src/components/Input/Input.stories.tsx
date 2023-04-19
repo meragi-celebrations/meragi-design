@@ -6,6 +6,7 @@ import { Text } from '../Text'
 export default {
   title: 'Components/Input',
   component: Input,
+  tags: ['autodocs'],
 } as Meta<typeof Input>
 
 // Create a master template for mapping args to render the Button component

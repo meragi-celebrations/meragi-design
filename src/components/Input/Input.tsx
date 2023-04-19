@@ -1,14 +1,15 @@
-import * as Label from '@radix-ui/react-label'
 import classNames from 'classnames'
 import React, { ChangeEvent, ReactElement, useState } from 'react'
-import { Text } from '../Text'
+import { Text } from '../../'
 import './Input.scss'
 
-type InputProps = {
-  name: string
+export type InputProps = {
+  name?: string
   label?: string | ReactElement
   placeholder?: string
-  onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  onChange?: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void
   labelPosition?: 'top' | 'side'
   textArea?: boolean
   rows?: number
@@ -24,7 +25,6 @@ type InputProps = {
 
 export const Input = ({
   name,
-  label,
   placeholder,
   onChange,
   labelPosition = 'top',
@@ -50,15 +50,11 @@ export const Input = ({
   ) => {
     const inputText = event.target.value
     setCharCount(inputText.length)
-    onChange(event)
+    onChange && onChange(event)
   }
 
   return (
     <div className={inputContainerClassName}>
-      <Label.Root className="input-label" htmlFor={name}>
-        {typeof label === 'string' ? <Text>{label}</Text> : label}
-        {required && <span className="required-indicator">*</span>}
-      </Label.Root>
       <div className="input-field-container">
         <InputElement
           id={name}
