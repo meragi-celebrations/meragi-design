@@ -8,7 +8,7 @@ import './Image.scss'
 interface Props extends HTMLAttributes<HTMLImageElement> {
   alt?: string
   src: string
-  fallbackSrc: string
+  fallbackSrc?: string
 }
 
 export const Image: React.FC<Props> = ({
@@ -27,7 +27,7 @@ export const Image: React.FC<Props> = ({
   const handleError = () => {
     setError(true)
     setLoading(false)
-    setImageSrc(fallbackSrc)
+    setImageSrc(fallbackSrc ?? '')
   }
 
   const handleLoad = () => {

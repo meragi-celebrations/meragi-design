@@ -1,0 +1,50 @@
+@import '../../mixins';
+@import '../../colors';
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  
+    .image {
+      object-fit: cover;
+      width: 100%;
+    }
+  
+    .content {
+      padding: 1rem;
+    }
+  
+    .title {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+  
+    .description {
+      font-size: 1rem;
+      margin: 0.5rem 0 0;
+    }
+
+    .actions-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 2em;
+        // @include paddingX(2px);
+        width: 100%;
+        border-top: 1px solid $border-color;
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+    }
+  }
+  
