@@ -2,9 +2,11 @@
 @import "../../colors";
 .text {
     font-family: $font-family;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    color: $text-color;
+
+    &.body {
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+      }
   
     &.h1 {
       font-size: $font-size-h1;
@@ -53,7 +55,9 @@
       letter-spacing: $letter-spacing-h6;
       margin-top: $margin-top-h6;
     }
-  
+    &.error {
+        font-size: .8rem;
+    }
     &.code {
       font-family: $font-family-monospaced;
     }

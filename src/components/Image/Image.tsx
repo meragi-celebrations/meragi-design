@@ -1,109 +1,91 @@
-import React, { useState } from "react";
-import "./Image.scss";
-import { Loader } from "./../Loader";
+import classNames from 'classnames'
+import React, { HTMLAttributes, useState } from 'react'
+import { IoAdd, IoClose, IoRefresh, IoRemove } from 'react-icons/io5'
+import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
+import { Button, Loader } from '../../'
+import './Image.scss'
 
-export interface ImageProps {
-  src: string;
-  alt?: string;
-  width?: number | string;
-  height?: number | string;
-  fallback?: string;
-  preview?: boolean | string;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  className?: string;
-  style?: React.CSSProperties;
-  wrapperClassName?: string;
-  wrapperStyle?: React.CSSProperties;
-  loading?: boolean;
+interface Props extends HTMLAttributes<HTMLImageElement> {
+  alt?: string
+  src: string
+  fallbackSrc?: string
 }
 
-export const Image: React.FC<ImageProps> = ({
-  src,
+export const Image: React.FC<Props> = ({
   alt,
-  width,
-  height,
-  fallback,
-  preview,
-  onClick,
+  src,
+  fallbackSrc,
   className,
-  style,
-  wrapperClassName,
-  wrapperStyle,
-  loading = true,
+  ...rest
 }) => {
-  const [loadingState, setLoadingState] = useState(loading);
-  const [error, setError] = useState(false);
+  const [imageSrc, setImageSrc] = useState(src)
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [isZoomed, setIsZoomed] = useState(false)
+  const imageClasses = classNames('image', className)
 
-  const [isPreviewOpen, setIsPreviewOpen] = useState<boolean>(false);
+  const handleError = () => {
+    setError(true)
+    setLoading(false)
+    setImageSrc(fallbackSrc ?? '')
+  }
 
-  const handlePreviewOpen = () => {
-    setIsPreviewOpen(true);
-  };
-
-  const handlePreviewClose = () => {
-    setIsPreviewOpen(false);
-  };
-
-  const handleImgLoad = () => {
-    setLoadingState(false);
-  };
-
-  const handleImgError = () => {
-    setLoadingState(false);
-    setError(true);
-  };
-
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (onClick) {
-      onClick(event);
-    }
-  };
-
-  const imageWrapperClass = wrapperClassName ? `image-wrapper ${wrapperClassName}` : "image-wrapper";
-
-  const imageClass = className ? `image ${className}` : "image";
-
-  const imageStyle = style ? style : {};
-
-  const imageWrapperStyle = wrapperStyle ? wrapperStyle : {};
-
-  const renderPlaceholder = () => {
-    if (fallback) {
-      return (
-        <div className="placeholder">
-          <img src={fallback} alt="Failed to load" />
-        </div>
-      );
-    } else {
-      return (
-        <div className="placeholder">
-          <span>Failed to load image</span>
-        </div>
-      );
-    }
-  };
+  const handleLoad = () => {
+    setLoading(false)
+  }
 
   return (
-    <div className={imageWrapperClass} style={imageWrapperStyle} onClick={handleClick}>
-      {loadingState && <Loader />}
-      {error && fallback && typeof fallback !== 'string' && <div className="placeholder">{fallback}</div>}
-      {!error &&
-        <img src={src} alt={alt} onLoad={handleImgLoad} onError={handleImgError} width={width} height={height} className={imageClass} style={imageStyle} />
-      }
-      {preview && (
-       <>
-       <div className="preview" onClick={handlePreviewOpen}>
-         <img src={src} alt={alt} />
-       </div>
-       {isPreviewOpen && (
-         <div className="preview-modal" onClick={handlePreviewClose}>
-           <img src={src} alt={alt} />
-         </div>
-       )}
-     </>
+    <div className="image-container">
+      {loading && <Loader />}
+      {isZoomed ? (
+        <div className="zoom-container">
+          <TransformWrapper limitToBounds={false} centerOnInit>
+            {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+              <>
+                <div className="zoom-buttons">
+                  <Button circular onClick={() => zoomIn()} icon={<IoAdd />} />
+
+                  <Button
+                    circular
+                    onClick={() => zoomOut()}
+                    icon={<IoRemove />}
+                  />
+
+                  <Button
+                    circular
+                    onClick={() => resetTransform()}
+                    icon={<IoRefresh />}
+                  />
+                  <Button
+                    circular
+                    onClick={() => setIsZoomed(false)}
+                    icon={<IoClose />}
+                  />
+                </div>
+                <TransformComponent
+                  wrapperStyle={{ width: '90%', height: '90%' }}>
+                  <img
+                    {...rest}
+                    className="zoom-image"
+                    src={imageSrc}
+                    alt={alt}
+                  />
+                </TransformComponent>
+              </>
+            )}
+          </TransformWrapper>
+        </div>
+      ) : (
+        <img
+          {...rest}
+          className={imageClasses}
+          src={imageSrc}
+          alt={alt}
+          onError={handleError}
+          onLoad={handleLoad}
+          onClick={() => setIsZoomed(true)}
+        />
       )}
     </div>
-  );
-};
-
-export default Image;
+  )
+}

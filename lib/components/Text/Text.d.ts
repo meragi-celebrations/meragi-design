@@ -2,7 +2,7 @@ import React from 'react';
 import './Text.scss';
 export interface TextProps {
     children: React.ReactNode;
-    variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'code';
+    variant?: 'body' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'code' | 'error';
     strong?: boolean;
     italic?: boolean;
     link?: boolean;

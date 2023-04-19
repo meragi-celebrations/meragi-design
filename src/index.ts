@@ -1,7 +1,10 @@
 import { Button } from './components/Button'
+import { Divider } from './components/Divider'
+import { Image } from './components/Image'
+import { Input } from './components/Input'
 import { Loader } from './components/Loader'
+import { Select } from './components/Select'
 import { Space } from './components/Space'
 import { Text } from './components/Text'
-import { Image } from './components/Image'
 
-export { Button, Loader, Space, Text, Image }
+export { Button, Loader, Space, Text, Select, Input, Image, Divider }
