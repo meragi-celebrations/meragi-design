@@ -1,4 +1,5 @@
 @import '../../variables';
+@import '../../colors';
 
 .input-container {
     display: flex;
@@ -7,12 +8,12 @@
     position: relative;
 
     .required-indicator {
-        color: red;
+        color: $red;
         margin-left: 5px;
       }
     
       .error-message {
-        color: red;
+        color: $red;
         font-size: 0.8rem;
       }
   
@@ -52,12 +53,12 @@
       color: #333;
 
       &.error {
-        border: 1px solid red;
+        border: 1px solid $danger;
       }
   
       &:focus {
         outline: none;
-        border-color: $primary-color;
+        border-color: $primary;
       }
     }
 
