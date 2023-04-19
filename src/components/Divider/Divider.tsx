@@ -8,6 +8,9 @@ type DividerProps = {
   applyMargin?: boolean
 }
 
+/**
+ * A component that renders a divider line, either horizontally or vertically.
+ */
 export const Divider: React.FC<DividerProps> = ({
   direction = 'horizontal',
   applyMargin = true,
