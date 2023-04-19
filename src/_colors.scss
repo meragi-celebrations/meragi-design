@@ -172,6 +172,9 @@ $text-light: #ffffff;
 $text-disabled: #a4adba;
 $text-secondary: #5243aa;
 
+$text-color: $dark;
+$link-text-color: $primary;
+
 // calculate based on background color
 
 @function get-contrast-color($bg-color) {
@@ -187,7 +190,7 @@ $text-secondary: #5243aa;
     }
   }
   
-// Border Colors
+// Border ColorsYy
 $border-color: $gray-30;
 $border-hover-color: $gray-50;
 
