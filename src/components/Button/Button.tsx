@@ -1,19 +1,49 @@
-import React from "react";
-import "./Button.scss";
+import classnames from 'classnames'
+import React, { ReactElement } from 'react'
+import { Loader } from '../Loader'
+import './Button.scss'
 
-export interface ButtonProps {
-  children: React.ReactNode;
-  onClick: () => void;
-  disabled?: boolean;
-  size?: "small" | "medium" | "large";
+export interface ButtonProps
+  extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
+  children?: React.ReactNode
+  type?:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'danger'
+    | 'success'
+    | 'warning'
+    | 'info'
+    | 'ghost'
+  size?: 'small' | 'medium' | 'large'
+  circular?: boolean
+  icon?: ReactElement
+  loading?: boolean
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, onClick, disabled, size = "medium" }) => {
-  const buttonClassName = `btn my-button${size ? ` ${size}` : ""}`;
+export const Button: React.FC<ButtonProps> = ({
+  children,
+  type = 'default',
+  size = 'small',
+  icon,
+  loading,
+  circular,
+  ...rest
+}) => {
+  const classNames = classnames('button', type, size, { circular })
 
   return (
-    <button className={buttonClassName} onClick={onClick} disabled={disabled}>
-      {children}
+    <button className={classNames} {...rest}>
+      <div className="button-content">
+        {(loading || icon) && (
+          <span className="icon-container">{loading ? <Loader /> : icon}</span>
+        )}
+        <span>{children}</span>
+      </div>
     </button>
-  );
-};
+  )
+}
+
+export default Button

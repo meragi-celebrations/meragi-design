@@ -1,0 +1,47 @@
+.space-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  
+    &.horizontal {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: center;
+
+      .space-child {
+        &:not(:last-child) {
+            &.small {
+                margin-right: 8px;
+              }
+          
+              &.medium {
+                margin-right: 16px;
+              }
+          
+              &.large {
+                margin-right: 24px;
+              }
+        }
+      }
+    }
+  
+    &.vertical {
+      flex-direction: column;
+
+      .space-child {
+        &:not(:last-child) {
+            &.small {
+                margin-bottom: 8px;
+              }
+          
+              &.medium {
+                margin-bottom: 16px;
+              }
+          
+              &.large {
+                margin-bottom: 24px;
+              }
+        }
+      }
+    }
+  }
+  

@@ -7,3 +7,5 @@ lib/index.js.map
 lib/components/Button/Button.d.ts
 lib/components/Button/Button.stories.d.ts
 lib/components/Button/index.d.ts
+lib/*
+yarn.lock
