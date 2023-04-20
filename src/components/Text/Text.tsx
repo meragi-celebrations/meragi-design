@@ -13,8 +13,9 @@ export interface TextProps {
     | 'h6'
     | 'body'
     | 'code'
-    | 'error'
+    | 'description'
   strong?: boolean
+  type?: 'success' | 'danger' | 'warning' | 'info' | 'brand' | 'default';
   italic?: boolean
   link?: boolean
   href?: string
@@ -30,9 +31,10 @@ export const Text: React.FC<TextProps> = ({
   href,
   target,
   rel,
+  type = 'default',
   variant = 'body',
 }) => {
-  const classNames = `text ${variant}`
+  const classNames = `text ${variant} ${type}`
 
   if (link) {
     return (
