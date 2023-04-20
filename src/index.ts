@@ -17,3 +17,8 @@ export { ScrollArea } from './components/ScrollArea'
 export { Select } from './components/Select'
 export { Space } from './components/Space'
 export { Text } from './components/Text'
+export { 
+  Toast,
+  ToastProvider,
+  ToastViewPort,
+} from './components/Toast'
