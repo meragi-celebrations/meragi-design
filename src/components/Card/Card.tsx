@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react'
-import { Divider, Image, Text } from '../../'
 import { isString } from '../../utils/common'
+import { Divider } from '../Divider'
+import { Image } from '../Image'
+import { Text } from '../Text'
 import './Card.scss'
 
 export type CardProps = {

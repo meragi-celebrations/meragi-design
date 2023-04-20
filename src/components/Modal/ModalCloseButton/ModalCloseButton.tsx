@@ -1,7 +1,7 @@
 import * as RadixModal from '@radix-ui/react-dialog'
 import React from 'react'
-import { Button } from '../../..'
 import { isString } from '../../../utils/common'
+import { Button } from '../../Button'
 import '../Modal.scss'
 
 export type ModalCloseButtonProps = {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Space } from '../../..'
+import { Space } from '../../Space'
 import '../Modal.scss'
 
 export type ModalActionsProps = {
