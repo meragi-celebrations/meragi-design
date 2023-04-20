@@ -12,14 +12,14 @@ $overlay-opacity: .8;
 
 .content {
   background-color: white;
-  border-radius: 6px;
+  border-radius: 2.5px;
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90vw;
-  max-width: 500px;
+  max-width: 450px;
   max-height: 85vh;
   padding: 25px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -30,17 +30,28 @@ $overlay-opacity: .8;
 
   .title {
     margin: 0;
-    color: $dark;
-    font-size: 17px;
     font-weight: 500;
   }
-
+  
   .description {
-    margin-bottom: 20px;
-    color: $gray-80;
-    font-size: 15px;
-    line-height: 1.5;
+    margin: 10px 0 20px;
   }
+  
+  
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    margin-bottom: -20px;
+    padding-top: 5px;
+  }
+
 }
 
 @keyframes overlayShow {

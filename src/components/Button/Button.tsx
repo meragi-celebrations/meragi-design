@@ -15,6 +15,7 @@ export interface ButtonProps
     | 'success'
     | 'warning'
     | 'info'
+    | 'ghost'
   size?: 'small' | 'medium' | 'large'
   circular?: boolean
   icon?: ReactElement
