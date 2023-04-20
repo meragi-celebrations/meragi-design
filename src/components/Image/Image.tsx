@@ -2,7 +2,8 @@ import classNames from 'classnames'
 import React, { HTMLAttributes, useState } from 'react'
 import { IoAdd, IoClose, IoRefresh, IoRemove } from 'react-icons/io5'
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
-import { Button, Loader } from '../../'
+import { Button } from '../Button'
+import { Loader } from '../Loader'
 import './Image.scss'
 
 interface Props extends HTMLAttributes<HTMLImageElement> {

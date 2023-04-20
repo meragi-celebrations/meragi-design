@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react'
-import { Divider, Image, Text } from '../../'
 import { isString } from '../../utils/common'
+import { Divider } from '../Divider'
+import { Image } from '../Image'
+import { Text } from '../Text'
 import './Card.scss'
 
 export type CardProps = {
@@ -35,7 +37,9 @@ export const Card: React.FC<CardProps> = ({
           {actions?.map((action, index) => (
             <>
               <div className="action-item">{action}</div>{' '}
-              {index !== actions.length - 1 && <Divider direction="vertical" />}
+              {index !== actions.length - 1 && (
+                <Divider direction="vertical" applyMargin={false} />
+              )}
             </>
           ))}
         </div>

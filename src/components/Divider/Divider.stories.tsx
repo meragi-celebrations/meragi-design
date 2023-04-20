@@ -19,8 +19,16 @@ export const Default: Story = {
 
 export const Vertical: Story = {
   render: () => (
-    <div style={{ display: 'flex', height: 20 }}>
+    <div style={{ display: 'flex', height: 20, alignItems: 'center' }}>
       text <Divider direction="vertical" /> Text
+    </div>
+  ),
+}
+
+export const WithoutMargin: Story = {
+  render: () => (
+    <div style={{ display: 'flex', height: 20, alignItems: 'center' }}>
+      text <Divider direction="vertical" applyMargin={false} /> Text
     </div>
   ),
 }

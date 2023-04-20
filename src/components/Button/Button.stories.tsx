@@ -40,6 +40,12 @@ Success.args = {
   type: 'success',
 }
 
+export const Ghost = Template.bind({})
+Ghost.args = {
+  children: 'Ghost',
+  type: 'ghost',
+}
+
 export const Circular = Template.bind({})
 Circular.args = {
   children: 'A',

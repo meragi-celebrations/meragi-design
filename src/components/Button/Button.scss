@@ -110,6 +110,14 @@
     }
   }
 
+  &.ghost {
+    background-color: transparent;
+
+    &:hover:enabled {
+      background-color: #f2f2f2;
+    }
+  }
+
   &.circular {
     padding: 0.8rem;
     border-radius: 50%;

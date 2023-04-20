@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React, { ChangeEvent, ReactElement, useState } from 'react'
-import { Text } from '../../'
+import { Text } from '../Text'
 import './Input.scss'
 
 export type InputProps = {

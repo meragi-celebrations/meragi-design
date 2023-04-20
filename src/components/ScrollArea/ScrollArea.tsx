@@ -6,6 +6,10 @@ type ScrollAreaProps = {
   children: ReactNode
 }
 
+/**
+ * A scrollable area component that wraps its children in a viewport and provides
+    vertical and horizontal scrollbar components.
+ */
 export const ScrollArea = ({ children }: ScrollAreaProps) => {
   return (
     <RadixScrollArea.Root className="scroll-area">
