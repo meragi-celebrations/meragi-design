@@ -44,10 +44,11 @@
     "@radix-ui/react-label": "^2.0.1",
     "@radix-ui/react-scroll-area": "^1.0.3",
     "@radix-ui/react-separator": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.5",
+    "classnames": "^2.3.2",
     "react-icons": "^4.8.0",
     "react-select": "^5.7.2",
-    "react-zoom-pan-pinch": "^3.0.7",
-    "classnames": "^2.3.2"
+    "react-zoom-pan-pinch": "^3.0.7"
   },
   "peerDependencies": {
     "react": "^18.2.0",
