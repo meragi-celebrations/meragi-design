@@ -22,3 +22,4 @@ export {
   ToastProvider,
   ToastViewPort,
 } from './components/Toast'
+export { Badge } from './components/Badge'

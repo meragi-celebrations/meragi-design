@@ -1,0 +1,153 @@
+@import '../../colors';
+@import '../../variables';
+
+$badge-padding: 0.3rem 0.5rem;
+
+@mixin badge-style($background-color, $color) {
+    background-color: $background-color;
+    color: get-contrast-color($background-color);
+
+    &.faded {
+        background-color: lighten($background-color, 20%);
+        color: darken($color, 10%);
+
+        &.rounded {
+            border-radius: 999px;
+            padding: $badge-padding;
+        }
+    }
+
+    &.outlined {
+        background-color: transparent;
+        color: $color;
+        border: $border-width-thin $border-style-solid $color;
+
+        &.rounded {
+            border-radius: 999px;
+            padding: $badge-padding;
+        }
+    }
+
+    .badge-close {
+        position: relative;
+        position: relative;
+        border: none;
+        background: transparent;
+        padding: 0px 0px 0px 4px;
+    }
+}
+
+@mixin badge-container-style {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $badge-padding;
+    border-radius: $border-radius-small;
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    .icon-container {
+        line-height: 0;
+        margin-right: 4px;
+        font-size: 0.9rem;
+    }
+}
+
+
+.badge {
+    @include badge-container-style;
+
+    &.text {
+        @include badge-style(#f5f5f5, #666);
+
+        &.small {
+            padding: 0.1rem 0.3rem;
+            font-size: 0.6rem;
+        }
+
+        &.rounded {
+            border-radius: 999px;
+            padding: $badge-padding;
+        }
+    }
+
+    &.primary {
+        @include badge-style($primary, $light);
+
+        &.faded {
+            @include badge-style(lighten($primary, 10%), $primary);
+        }
+
+        &.outlined {
+            @include badge-style(transparent, $primary);
+        }
+
+        .badge-close {
+            @include badge-style(transparent, $primary);
+        }
+    }
+
+    &.success {
+        @include badge-style($success, $light);
+
+        &.faded {
+            @include badge-style(lighten($success, 10%), $success);
+        }
+
+        &.outlined {
+            @include badge-style(transparent, $success);
+        }
+
+        .badge-close {
+            @include badge-style(transparent, $success);
+        }
+    }
+
+    &.danger {
+        @include badge-style($danger, $light);
+
+        &.faded {
+            @include badge-style(lighten($danger, 10%), $danger);
+        }
+
+        &.outlined {
+            @include badge-style(transparent, $danger);
+        }
+
+        .badge-close {
+            @include badge-style(transparent, $danger);
+        }
+    }
+
+    &.warning {
+        @include badge-style($warning, $light);
+
+        &.faded {
+            @include badge-style(lighten($warning, 10%), $warning);
+        }
+
+        &.outlined {
+            @include badge-style(transparent, $warning);
+        }
+
+        .badge-close {
+            @include badge-style(transparent, $warning);
+        }
+    }
+
+    &.info {
+        @include badge-style($info, $light);
+
+        &.faded {
+            @include badge-style(lighten($info, 10%), $info);
+        }
+
+        &.outlined {
+            @include badge-style(transparent, $info);
+        }
+
+        .badge-close {
+            @include badge-style(transparent, $info);
+        }
+    }
+}
