@@ -13,6 +13,7 @@ export {
   ModalBody,
   ModalCloseButton,
 } from './components/Modal'
+export { Progress } from './components/Progress'
 export { ScrollArea } from './components/ScrollArea'
 export { Select } from './components/Select'
 export { Space } from './components/Space'
