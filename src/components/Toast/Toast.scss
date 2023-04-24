@@ -34,23 +34,23 @@
     }
 
     &.success {
-      background-color: $success-light;
-      color: get-contrast-color($success-light);
+      background-color: $success;
+      color: get-contrast-color($success);
     }
 
-    &.error {
-      background-color: $danger-light;
-      color: get-contrast-color($danger-light);
+    &.danger {
+      background-color: $danger;
+      color: get-contrast-color($danger);
     }
 
     &.warning {
-      background-color: $warning-light;
-      color: get-contrast-color($warning-light);
+      background-color: $warning;
+      color: get-contrast-color($warning);
     }
 
     &.info {
-      background-color: $info-light;
-      color: get-contrast-color($info-light);
+      background-color: $info;
+      color: get-contrast-color($info);
     }
 
     &.primary {
