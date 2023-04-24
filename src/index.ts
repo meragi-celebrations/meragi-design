@@ -1,4 +1,5 @@
 export { Alert } from './components/Alert'
+export { Badge } from './components/Badge'
 export { Button } from './components/Button'
 export { Card } from './components/Card'
 export { Divider } from './components/Divider'
@@ -13,13 +14,10 @@ export {
   ModalBody,
   ModalCloseButton,
 } from './components/Modal'
+export { Progress } from './components/Progress'
 export { ScrollArea } from './components/ScrollArea'
 export { Select } from './components/Select'
 export { Space } from './components/Space'
 export { Text } from './components/Text'
-export { 
-  Toast,
-  ToastProvider,
-  ToastViewPort,
-} from './components/Toast'
-export { Badge } from './components/Badge'
+export { Toast, ToastProvider, ToastViewPort } from './components/Toast'
+export { Tooltip } from './components/Tooltip'
