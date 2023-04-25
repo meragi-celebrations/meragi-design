@@ -1,2 +1,2 @@
-export { Toast, ToastProvider, ToastViewPort } from "./Toast";
-export { useToast } from './useToast';
+export { Toast } from './Toast'
+export { useToast } from './useToast'

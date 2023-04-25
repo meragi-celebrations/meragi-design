@@ -1,103 +1,88 @@
-import * as ToastPrimitive from '@radix-ui/react-toast'
-import React, { ReactElement, useEffect, useState } from 'react'
+import * as RxToast from '@radix-ui/react-toast'
+import classNames from 'classnames'
+import * as React from 'react'
+import { IoClose } from 'react-icons/io5'
 import { isString } from '../../utils/common'
-import { Text } from '../Text'
 import { Button } from '../Button'
-import { Loader } from '../Loader'
-
-export type ToastType =
-  | 'success'
-  | 'danger'
-  | 'warning'
-  | 'info'
-  | 'primary'
-  | 'default'
+import { Text } from '../Text'
+import { ShowProps, ToastContext } from './Context'
+import './Toast.scss'
 
 export type ToastProps = {
-  key?: string
-  message: string | React.ReactNode
-  type?: ToastType
-  closeable?: boolean
-  closeIcon?: ReactElement
-  onClose?: (open: boolean) => void
-  open?: boolean
-  onOpenChange?: (open: boolean) => void
-  action?: React.ReactNode
-  promise?: Promise<any>
+  children: React.ReactNode
+  showClose?: boolean
 }
 
-export const ToastProvider = ToastPrimitive.Provider
+/**
+ * Usage:
+ *
+ * `<Toast><App /></Toast>`
+ * ```
+ * const toast = useToast()
+ * toast.show!({
+          title: 'Toast',
+          description: 'This is a toast',
+          action: <Button type="ghost">Action</Button>,
+          type: 'success',
+          duration: 3000
+        })
+ * ```
+ */
+export const Toast = ({ children, showClose = false }: ToastProps) => {
+  const timerRef = React.useRef(0)
 
-export const ToastViewPort = ToastPrimitive.Viewport
+  const [toasts, setToasts] = React.useState<ShowProps[]>([])
 
-export const Toast: React.FC<ToastProps> = ({
-  key = Date.now().toString(),
-  message,
-  type = 'default',
-  closeable = true,
-  closeIcon,
-  open,
-  onOpenChange,
-  action,
-  promise,
-}) => {
-  const spinIcon = <Loader />
-  const [toastType, setToastType] = useState(type)
-  const [closIconState, setCloseIconState] = useState(
-    promise ? false : closeable,
-  )
+  React.useEffect(() => {
+    return () => clearTimeout(timerRef.current)
+  }, [])
 
-  useEffect(() => {
-    if (promise) {
-      promise
-        .then(() => setCloseIconState(false))
-        .catch(() => setCloseIconState(true))
-    }
-  }, [promise])
+  const show = (toast: ShowProps) => {
+    setToasts((prev) => [...prev, toast])
+  }
 
-  var close_text = closeIcon ? (
-    <Button
-      circular
-      icon={closeIcon}
-      onClick={() => {}}
-      type={toastType == 'default' ? 'ghost' : toastType}
-    />
-  ) : (
-    'Close'
-  )
   return (
-    <ToastPrimitive.Root
-      key={key}
-      className={`ToastRoot ${toastType}`}
-      open={open}
-      onOpenChange={onOpenChange}>
-      {message && (
-        <ToastPrimitive.Title>
-          <Text variant="description">{message}</Text>
-        </ToastPrimitive.Title>
-      )}
-      {closIconState && (
-        <ToastPrimitive.Close
-          className={`button ${type == 'default' ? 'ghost' : toastType}`}>
-          {close_text}
-        </ToastPrimitive.Close>
-      )}
-      {!closIconState && (
-        <ToastPrimitive.Close
-          className={`button ${type == 'default' ? 'ghost' : toastType}`}>
-          {spinIcon}
-        </ToastPrimitive.Close>
-      )}
+    <div className="toast">
+      <ToastContext.Provider value={{ show }}>
+        <RxToast.Provider swipeDirection="right">
+          {children}
 
-      {isString(action) ? (
-        <ToastPrimitive.Action altText="" asChild className="ToastAction">
-          {action}
-        </ToastPrimitive.Action>
-      ) : (
-        <ToastPrimitive.Action altText="" asChild className="ToastAction">
-          {action}
-        </ToastPrimitive.Action>
-      )}
-    </ToastPrimitive.Root>
+          {toasts.map((toast: ShowProps) => (
+            <RxToast.Root
+              className={classNames('root', toast.type)}
+              duration={toast.duration ?? 3000}>
+              <div>
+                <RxToast.Title className="title">
+                  <Text variant="h5">{toast.title}</Text>
+                </RxToast.Title>
+                <RxToast.Description asChild className="description">
+                  {isString(toast.description) ? (
+                    <Text>{toast.description}</Text>
+                  ) : (
+                    toast.description
+                  )}
+                </RxToast.Description>
+              </div>
+
+              {toast.action && (
+                <div className="action">
+                  <RxToast.Action asChild altText="Goto schedule to undo">
+                    {toast.action}
+                  </RxToast.Action>
+                </div>
+              )}
+              {showClose && (
+                <div className="close">
+                  <RxToast.Close asChild>
+                    <Button circular type="ghost" icon={<IoClose />} />
+                  </RxToast.Close>
+                </div>
+              )}
+            </RxToast.Root>
+          ))}
+          <RxToast.Viewport className="viewport" />
+        </RxToast.Provider>
+      </ToastContext.Provider>
+    </div>
   )
 }
