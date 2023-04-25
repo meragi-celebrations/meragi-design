@@ -1,6 +1,7 @@
 .image-container {
   position: relative;
   display: inline-block;
+  border-radius: 2.5px;
   
   .loader {
     position: absolute;
@@ -17,6 +18,7 @@
     display: block;
     max-width: 100%;
     height: auto;
+    border-radius: 2.5px;
 
     &:hover {
       cursor: pointer;

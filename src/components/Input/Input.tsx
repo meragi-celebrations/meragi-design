@@ -83,7 +83,7 @@ export const Input = ({
       {error && (
         <div className="error-message">
           {typeof error === 'string' ? (
-            <Text variant="error">{error}</Text>
+            <Text type="danger">{error}</Text>
           ) : (
             error
           )}
