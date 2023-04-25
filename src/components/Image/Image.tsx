@@ -7,8 +7,19 @@ import { Loader } from '../Loader'
 import './Image.scss'
 
 interface Props extends HTMLAttributes<HTMLImageElement> {
+  /**
+   * The alternative text to display if the image fails to load or cannot be displayed.
+   * This text is important for accessibility purposes and should provide a description of the image content.
+   */
   alt?: string
+  /**
+   * The URL of the image to display.
+   */
   src: string
+  /**
+   * An optional fallback URL to use if the primary image fails to load.
+   * This can be useful for handling network errors or slow connections.
+   */
   fallbackSrc?: string
 }
 

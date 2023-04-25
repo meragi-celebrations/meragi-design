@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { Card } from '.'
+import { Button } from '../Button'
 
 export default {
   title: 'Components/Card',
@@ -16,7 +17,10 @@ export const Default: Story = {
         title="This is title"
         description="This is description"
         imageUrl="https://picsum.photos/600/500"
-        actions={['Action', 'Action', 'Action']}
+        actions={[
+          <Button type="ghost">Action</Button>,
+          <Button type="ghost">Action</Button>,
+        ]}
       />
     </div>
   ),
