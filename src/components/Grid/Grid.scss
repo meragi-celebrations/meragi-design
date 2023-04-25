@@ -1,0 +1,47 @@
+$row-cols: 24;
+
+$gutter: 5px;
+
+@mixin hor-gutter() {
+    @for $i from 1 through 20 {
+        &.gutter-hor-#{$i} {
+            :not(:first-child){
+                margin-left: calc(#{$i}px / 2);
+            }
+            *:not(:last-child) {
+                margin-right: calc(#{$i}px / 2);
+            }
+        }
+    }
+}
+
+@mixin ver-gutter() {
+    @for $i from 1 through 20 {
+        &.gutter-ver-#{$i} {
+            margin-bottom: #{$i}px;
+        }
+    }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include hor-gutter();
+
+  @include ver-gutter();
+
+  .col {
+    box-sizing: border-box;
+
+
+    @for $i from 1 through $row-cols {
+        &.col-#{$i} {
+          flex-basis: 0;
+          flex-grow: 1;
+          max-width: calc(100% / #{$row-cols} * #{$i});
+        }
+      }
+  }
+}
