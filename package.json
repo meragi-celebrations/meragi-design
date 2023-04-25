@@ -2,7 +2,9 @@
   "name": "@meragi/meragi-design",
   "version": "0.0.12",
   "description": "Meragi design components",
-  "author": "Meragi",
+  "author": {
+    "name": "Meragi"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",
@@ -60,7 +62,8 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "rollup -c --bundleConfigAsCjs",
+    "chromatic": "chromatic --project-token=6f7be1eacf87"
   },
   "main": "lib/index.js",
   "typings": "src/index",
@@ -69,5 +72,7 @@
   "files": [
     "lib",
     "src"
-  ]
+  ],
+  "readme": "ERROR: No README data found!",
+  "_id": "@meragi/meragi-design@0.0.12"
 }
