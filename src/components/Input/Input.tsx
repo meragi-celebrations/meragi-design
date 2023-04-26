@@ -19,6 +19,7 @@ export type InputProps = {
   maxLength?: number
   pattern?: string
   defaultValue?: string | number | string[]
+  value?: string | number | string[]
   error?: string | ReactElement
   showCount?: boolean
 }
@@ -36,6 +37,7 @@ export const Input = ({
   maxLength,
   pattern,
   defaultValue,
+  value,
   error,
   showCount = false,
 }: InputProps) => {
@@ -70,6 +72,7 @@ export const Input = ({
           maxLength={maxLength}
           pattern={pattern}
           defaultValue={defaultValue}
+          value={value}
         />
         {maxLength && showCount && (
           <div className="char-count">

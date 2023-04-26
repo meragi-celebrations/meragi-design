@@ -11,7 +11,7 @@ export default {
 
 // Create a master template for mapping args to render the Button component
 const Template: ComponentStory<typeof Input> = (args: any) => (
-  <Input {...args} name="test" />
+  <Input {...args} name="test" defaultValue="texttt" />
 )
 
 export const Default = Template.bind({})
