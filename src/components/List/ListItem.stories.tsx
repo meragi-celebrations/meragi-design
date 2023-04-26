@@ -3,11 +3,11 @@ import React from 'react'
 import { List, ListItem } from '.'
 
 export default {
-  title: 'Components/List',
-  component: List,
-} as Meta<typeof List>
+  title: 'Components/List/ListItem',
+  component: ListItem,
+} as Meta<typeof ListItem>
 
-type Story = StoryObj<typeof List>
+type Story = StoryObj<typeof ListItem>
 
 interface User {
   id: number

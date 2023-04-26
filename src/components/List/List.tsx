@@ -4,8 +4,20 @@ import { Text } from '../Text'
 import './List.scss'
 
 export interface ListProps<T> {
+  /**
+   * The CSS class name(s) to apply to the List component.
+   */
   className?: string
+  /**
+   * The data source to render in the List.
+   * This should be an array of items of type `T`.
+   */
   dataSource: T[]
+  /**
+   * The function that renders each item in the List.
+   * This should take an item of type `T` and its index in the `dataSource` array as arguments,
+   * and should return a React node that represents the item.
+   */
   renderItem: (item: T, index: number) => React.ReactNode
 }
 
@@ -26,12 +38,29 @@ export function List<T extends any>({
 }
 
 export type ListItemProps = {
+  /**
+   * The title of the list item, which can be either a string or a React node.
+   */
   title?: string | React.ReactNode
+  /**
+   * The description of the list item, which can be either a string or a React node.
+   */
   description?: string | React.ReactNode
+  /**
+   * Whether the list item should have hover effects.
+   */
   hover?: boolean
-  onHover?: () => void
+  /**
+   * Callback function to handle click events.
+   */
   onClick?: () => void
+  /**
+   * The CSS class name(s) to apply to the list item.
+   */
   className?: string
+  /**
+   * The child elements of the list item.
+   */
   children?: React.ReactNode
 }
 
