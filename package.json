@@ -1,6 +1,6 @@
 {
   "name": "@meragi/meragi-design",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Meragi design components",
   "author": {
     "name": "Meragi"
@@ -72,7 +72,5 @@
   "files": [
     "lib",
     "src"
-  ],
-  "readme": "ERROR: No README data found!",
-  "_id": "@meragi/meragi-design@0.0.12"
+  ]
 }
