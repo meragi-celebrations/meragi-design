@@ -8,6 +8,7 @@ export { Col, Row } from './components/Grid'
 export { Image } from './components/Image'
 export { Input } from './components/Input'
 export { Label } from './components/Label'
+export { List, ListItem } from './components/List'
 export { Loader } from './components/Loader'
 export {
   Modal,
