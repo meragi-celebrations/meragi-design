@@ -6,18 +6,49 @@ import { Modal, ModalBody } from '../Modal'
 import './GridSelect.scss'
 
 export type GridSelectProps<T> = {
+  /**
+   * Text or component to trigger the GridSelect.
+   */
   control?: string | React.ReactNode
   /**
    * The data source to render in the GridSelect.
    * This should be an array of items of type `T`.
    */
   dataSource: T[]
+  /**
+   * The function that renders each item in the GridSelect.
+   * This should take an item of type `T`, its index in the `dataSource` array,
+   * and the currently selected item(s) as arguments,
+   * and should return a React node that represents the item.
+   */
   renderItem: (item: T, index: number, selected: any) => React.ReactNode
+  /**
+   * The number of columns each item should span.
+   */
   span?: number
+  /**
+   * The size of each item in the grid.
+   */
   size?: Size
+  /**
+   * The item(s) that should be selected by default.
+   * This should be an array of the same type as the `getId` function returns.
+   */
   defaultSelected?: any[]
+  /**
+   * Callback function to handle selection changes.
+   * This should take the newly selected item of type `T` and the previously selected item(s)
+   * as arguments, and should not return anything.
+   */
   onChange?: (item: T, prevSelected: any) => void
+  /**
+   * The title of the GridSelect, which can be either a string or a React node.
+   */
   title?: string | React.ReactNode
+  /**
+   * The function that returns the ID of an item in the `dataSource`.
+   * This ID should be of a type that can be compared to the items in the `defaultSelected` array.
+   */
   getId: (item: T) => any
 }
 
