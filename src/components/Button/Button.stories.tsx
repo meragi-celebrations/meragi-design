@@ -19,25 +19,25 @@ Default.args = {
 export const Primary = Template.bind({})
 Primary.args = {
   children: 'Primary',
-  type: 'primary',
+  color: 'primary',
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
   children: 'Secondary',
-  type: 'secondary',
+  color: 'secondary',
 }
 
 export const Danger = Template.bind({})
 Danger.args = {
   children: 'Danger',
-  type: 'danger',
+  color: 'danger',
 }
 
 export const Success = Template.bind({})
 Success.args = {
   children: 'Success',
-  type: 'success',
+  color: 'success',
 }
 
 export const Ghost = Template.bind({})
@@ -49,7 +49,7 @@ Ghost.args = {
 export const Circular = Template.bind({})
 Circular.args = {
   children: 'A',
-  type: 'danger',
+  color: 'danger',
   circular: true,
 }
 
@@ -62,13 +62,13 @@ Disabled.args = {
 export const WithIcon = Template.bind({})
 WithIcon.args = {
   children: 'Primary',
-  type: 'primary',
+  color: 'primary',
   icon: <IoAddCircleOutline />,
 }
 
 export const CircleWithIcon = Template.bind({})
 CircleWithIcon.args = {
-  type: 'primary',
+  color: 'primary',
   circular: true,
   icon: <IoAddCircleOutline />,
 }

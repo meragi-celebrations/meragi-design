@@ -7,17 +7,17 @@ $green: #02875a;
 $blue: #0052cc;
 $purple: #5243aa;
 $cyan: #00b8d9;
-$gray: #a4adba;
+$gray: #808080;
 
-$gray-10: #f5f7fa;
-$gray-20: #dddee1;
-$gray-30: #bac2cc;
-$gray-40: #a1abb6;
-$gray-50: #8a97a3;
-$gray-60: #6c757d;
-$gray-70: #4e5b66;
-$gray-80: #364047;
-$gray-90: #1f2933;
+$gray-10: #f2f2f2;
+$gray-20: #e5e5e5;
+$gray-30: #d9d9d9;
+$gray-40: #cccccc;
+$gray-50: #bfbfbf;
+$gray-60: #b3b3b3;
+$gray-70: #a6a6a6;
+$gray-80: #999999;
+$gray-90: #8c8c8c;
 
 $black-10: #f2f2f2;
 $black-20: #e5e5e5;
@@ -33,6 +33,36 @@ $black-90: #333333;
 $primary: #5E2EA9;
 $secondary: #EB5C5C;
 $tertiary: #FCCC61;
+
+$primary-10: mix($primary, $gray-10, 10%);
+$primary-20: mix($primary, $gray-10, 20%);
+$primary-30: mix($primary, $gray-10, 30%);
+$primary-40: mix($primary, $gray-10, 40%);
+$primary-50: mix($primary, $gray-10, 50%);
+$primary-60: mix($primary, $gray-10, 60%);
+$primary-70: mix($primary, $gray-10, 70%);
+$primary-80: mix($primary, $gray-10, 80%);
+$primary-90: mix($primary, $gray-10, 90%);
+
+$secondary-10: mix($secondary, $gray-10, 10%);
+$secondary-20: mix($secondary, $gray-10, 20%);
+$secondary-30: mix($secondary, $gray-10, 30%);
+$secondary-40: mix($secondary, $gray-10, 40%);
+$secondary-50: mix($secondary, $gray-10, 50%);
+$secondary-60: mix($secondary, $gray-10, 60%);
+$secondary-70: mix($secondary, $gray-10, 70%);
+$secondary-80: mix($secondary, $gray-10, 80%);
+$secondary-90: mix($secondary, $gray-10, 90%);
+
+$tertiary-10: mix($tertiary, $gray-10, 10%);
+$tertiary-20: mix($tertiary, $gray-10, 20%);
+$tertiary-30: mix($tertiary, $gray-10, 30%);
+$tertiary-40: mix($tertiary, $gray-10, 40%);
+$tertiary-50: mix($tertiary, $gray-10, 50%);
+$tertiary-60: mix($tertiary, $gray-10, 60%);
+$tertiary-70: mix($tertiary, $gray-10, 70%);
+$tertiary-80: mix($tertiary, $gray-10, 80%);
+$tertiary-90: mix($tertiary, $gray-10, 90%);
 
 // Neutral Colors
 $dark: #0b0514;
@@ -104,6 +134,46 @@ $danger: $red;
 $warning: $orange;
 $success: $green;
 $info: $blue;
+
+$success-10: mix($success, $gray-10, 10%);
+$success-20: mix($success, $gray-10, 20%);
+$success-30: mix($success, $gray-10, 30%);
+$success-40: mix($success, $gray-10, 40%);
+$success-50: mix($success, $gray-10, 50%);
+$success-60: mix($success, $gray-10, 60%);
+$success-70: mix($success, $gray-10, 70%);
+$success-80: mix($success, $gray-10, 80%);
+$success-90: mix($success, $gray-10, 90%);
+
+$warning-10: mix($warning, $gray-10, 10%);
+$warning-20: mix($warning, $gray-10, 20%);
+$warning-30: mix($warning, $gray-10, 30%);
+$warning-40: mix($warning, $gray-10, 40%);
+$warning-50: mix($warning, $gray-10, 50%);
+$warning-60: mix($warning, $gray-10, 60%);
+$warning-70: mix($warning, $gray-10, 70%);
+$warning-80: mix($warning, $gray-10, 80%);
+$warning-90: mix($warning, $gray-10, 90%);
+
+$danger-10: mix($danger, $gray-10, 10%);
+$danger-20: mix($danger, $gray-10, 20%);
+$danger-30: mix($danger, $gray-10, 30%);
+$danger-40: mix($danger, $gray-10, 40%);
+$danger-50: mix($danger, $gray-10, 50%);
+$danger-60: mix($danger, $gray-10, 60%);
+$danger-70: mix($danger, $gray-10, 70%);
+$danger-80: mix($danger, $gray-10, 80%);
+$danger-90: mix($danger, $gray-10, 90%);
+
+$info-10: mix($info, $gray-10, 10%);
+$info-20: mix($info, $gray-10, 20%);
+$info-30: mix($info, $gray-10, 30%);
+$info-40: mix($info, $gray-10, 40%);
+$info-50: mix($info, $gray-10, 50%);
+$info-60: mix($info, $gray-10, 60%);
+$info-70: mix($info, $gray-10, 70%);
+$info-80: mix($info, $gray-10, 80%);
+$info-90: mix($info, $gray-10, 90%);
 
 // Darken and lighten shades for semantic colors
 $danger-dark: darken($danger, 10%);

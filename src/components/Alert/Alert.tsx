@@ -87,11 +87,7 @@ export const Alert = ({
     <AlertDialog.Root defaultOpen={defaultOpen} {...rootProps}>
       {controlled && (
         <AlertDialog.Trigger asChild>
-          {isString(control) ? (
-            <Button type="default">{control}</Button>
-          ) : (
-            control
-          )}
+          {isString(control) ? <Button>{control}</Button> : control}
         </AlertDialog.Trigger>
       )}
       <AlertDialog.Portal>
@@ -115,9 +111,9 @@ export const Alert = ({
             <AlertDialog.Cancel asChild>
               {isString(cancel) ? (
                 <Button
-                  type="default"
+                  type="solid"
                   onClick={!controlled ? onCancel : undefined}>
-                  Cancel
+                  {cancel}
                 </Button>
               ) : (
                 cancel
@@ -126,9 +122,10 @@ export const Alert = ({
             <AlertDialog.Action asChild>
               {isString(confirm) ? (
                 <Button
-                  type={type as any}
+                  type="solid"
+                  color={type as any}
                   onClick={!controlled ? onConfirm : undefined}>
-                  Yes, delete account
+                  {confirm}
                 </Button>
               ) : (
                 confirm

@@ -20,7 +20,7 @@ export const Default: Story = {
     confirm: 'Yes, delete account',
     defaultOpen: false,
     controlled: true,
-    control: <Button type="danger">Delete</Button>,
+    control: <Button color="danger">Delete</Button>,
     open: false,
     onOpenChange: (open) => {},
   },
@@ -86,6 +86,6 @@ export const CustomControlText: Story = {
 export const CustomControlComponent: Story = {
   args: {
     ...Default.args,
-    control: <Button type="primary">Custom control</Button>,
+    control: <Button color="primary">Custom control</Button>,
   },
 }

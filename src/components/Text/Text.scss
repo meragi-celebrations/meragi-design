@@ -4,29 +4,39 @@
 .text {
   font-family: $font-family;
 
+  &.danger {
+    color: $danger;
+  }
+
+  &.success {
+    color: $success;
+  }
+
+  &.warning {
+    color: $warning;
+  }
+
+  &.info {
+    color: $info;
+  }
+
+  &.brand {
+    color: $primary;
+  }
+
   &.body {
     font-size: $font-size-base;
     line-height: $line-height-base;
+  }
 
-    &.danger {
-      color: $danger;
-    }
+  &.p1 {
+    font-size: $font-size-p1;
+    line-height: $line-height-p1;
+  }
 
-    &.success {
-      color: $success;
-    }
-
-    &.warning {
-      color: $warning;
-    }
-
-    &.info {
-      color: $info;
-    }
-
-    &.brand {
-      color: $primary;
-    }
+  &.p1 {
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
   }
 
   &.h1 {
