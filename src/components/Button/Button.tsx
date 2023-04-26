@@ -3,7 +3,8 @@ import React from 'react'
 import { Loader } from '../Loader'
 import './Button.scss'
 
-interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
+export interface ButtonProps
+  extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
   /**
    * The content to display inside the button.
    * This can be a simple string or a more complex React node.

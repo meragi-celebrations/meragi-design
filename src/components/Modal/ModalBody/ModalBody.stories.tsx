@@ -12,7 +12,7 @@ type Story = StoryObj<typeof ModalBody>
 
 export const Base: Story = {
   render: () => (
-    <Modal>
+    <Modal control="Open">
       <ModalBody title="Modal Title" description="Modal Description">
         Modal Content
       </ModalBody>
