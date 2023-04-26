@@ -43,7 +43,7 @@ export const Card: React.FC<CardProps> = ({
     <div className="card">
       {!!extra && extra}
       {!!imageUrl && <Image src={imageUrl} className="image" />}
-      <div className="content">
+      <div className="card-content">
         <span className="title">
           {isString(title) ? <Text variant="h4">{title}</Text> : title}
         </span>
