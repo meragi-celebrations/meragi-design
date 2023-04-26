@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { HTMLAttributes, useState } from 'react'
+import React, { HTMLAttributes, useEffect, useState } from 'react'
 import { IoAdd, IoClose, IoRefresh, IoRemove } from 'react-icons/io5'
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 import { Button } from '../Button'
@@ -45,6 +45,10 @@ export const Image: React.FC<Props> = ({
   const handleLoad = () => {
     setLoading(false)
   }
+
+  useEffect(() => {
+    setImageSrc(src)
+  }, [src])
 
   return (
     <div className="image-container">
