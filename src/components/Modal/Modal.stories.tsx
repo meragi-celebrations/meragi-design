@@ -15,6 +15,7 @@ type Story = StoryObj<typeof Modal>
 
 export const Base: Story = {
   args: {
+    control: 'Open',
     children: (
       <>
         <Text>Content of Modal</Text>
@@ -25,6 +26,7 @@ export const Base: Story = {
 
 export const CompleteExample: Story = {
   args: {
+    control: 'Open',
     children: (
       <>
         <ModalBody
