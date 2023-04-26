@@ -15,7 +15,11 @@ export interface ButtonProps
    * This can be one of several predefined types, such as 'primary', 'secondary', etc.
    * If not specified, the default value is 'default'.
    */
-  type?:
+  type?: 'solid' | 'ghost' | 'outline'
+  /**
+   * Color of button
+   */
+  color?:
     | 'default'
     | 'primary'
     | 'secondary'
@@ -24,7 +28,6 @@ export interface ButtonProps
     | 'success'
     | 'warning'
     | 'info'
-    | 'ghost'
   /**
    * The size of the button to display.
    * This can be one of several predefined sizes, such as 'small', 'medium', or 'large'.
@@ -57,14 +60,15 @@ export interface ButtonProps
 
 export const Button: React.FC<ButtonProps> = ({
   children,
-  type = 'default',
+  type = 'outline',
+  color = 'default',
   size = 'small',
   icon,
   loading,
   circular,
   ...rest
 }) => {
-  const classNames = classnames('button', type, size, { circular })
+  const classNames = classnames('button', type, color, size, { circular })
 
   return (
     <button className={classNames} {...rest}>
