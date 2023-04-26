@@ -3,8 +3,19 @@ import classNames from 'classnames'
 import React from 'react'
 import './Divider.scss'
 
-type DividerProps = {
+export type DividerProps = {
+  /**
+   * The direction in which the divider should be displayed.
+   * If set to 'horizontal', the divider will be displayed horizontally.
+   * If set to 'vertical', the divider will be displayed vertically.
+   * If not specified, the default value is 'horizontal'.
+   */
   direction?: 'horizontal' | 'vertical'
+  /**
+   * Whether to apply margin to the divider or not.
+   * If set to true, the divider will have a margin applied to it.
+   * If set to false or not specified, no margin will be applied to the divider.
+   */
   applyMargin?: boolean
 }
 
