@@ -21,11 +21,11 @@ export interface ListProps<T> {
   renderItem: (item: T, index: number) => React.ReactNode
 }
 
-export function List<T extends any>({
+export const List = <T extends any>({
   className,
   dataSource,
   renderItem,
-}: ListProps<T>) {
+}: ListProps<T>) => {
   const classNames = classnames('list', className)
 
   return (

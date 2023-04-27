@@ -33,7 +33,7 @@ export interface ButtonProps
    * This can be one of several predefined sizes, such as 'small', 'medium', or 'large'.
    * If not specified, the default value is 'medium'.
    */
-  size?: 'small' | 'medium' | 'large'
+  size?: 'x-small' | 'small' | 'medium' | 'large'
   /**
    * Whether to display the button in a circular shape or not.
    * If set to true, the button will be displayed as a circle.
