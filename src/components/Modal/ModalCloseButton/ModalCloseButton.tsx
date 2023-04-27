@@ -13,7 +13,13 @@ export const ModalCloseButton = ({
 }: ModalCloseButtonProps) => {
   return (
     <RadixModal.Close asChild>
-      {isString(close) ? <Button type="primary">{close}</Button> : close}
+      {isString(close) ? (
+        <Button type="solid" color="primary">
+          {close}
+        </Button>
+      ) : (
+        close
+      )}
     </RadixModal.Close>
   )
 }
