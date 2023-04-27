@@ -50,6 +50,10 @@ export type GridSelectProps<T> = {
    * This ID should be of a type that can be compared to the items in the `defaultSelected` array.
    */
   getId: (item: T) => any
+  /**
+   * Content to display at the top right of the GridSelect Modal.
+   */
+  extra?: React.ReactNode
 }
 
 export const GridSelect = <T extends any>({
@@ -62,6 +66,7 @@ export const GridSelect = <T extends any>({
   onChange,
   title,
   getId,
+  extra,
 }: GridSelectProps<T>) => {
   const [selected, setSelected] = useStateWithCallbackLazy(
     defaultSelected || [],
@@ -82,8 +87,8 @@ export const GridSelect = <T extends any>({
   }
 
   return (
-    <>
-      <Modal control={control} size={size} showClose={false}>
+    <Modal control={control} size={size} showClose={false}>
+      <div className="grid-select">
         <ModalBody title={title}>
           <Row>
             {dataSource.map((item, index) => (
@@ -95,7 +100,8 @@ export const GridSelect = <T extends any>({
             ))}
           </Row>
         </ModalBody>
-      </Modal>
-    </>
+        {extra && <div className="extra-container">{extra}</div>}
+      </div>
+    </Modal>
   )
 }

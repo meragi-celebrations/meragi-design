@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { GridSelect } from '.'
 import { Card } from '../Card'
+import { Input } from '../Input'
 import { Text } from '../Text'
 
 export default {
@@ -32,6 +33,11 @@ export const Default: Story = {
         dataSource={dataSource}
         getId={(item) => item.id}
         defaultSelected={[2]}
+        extra={
+          <>
+            <Input placeholder="Search" />
+          </>
+        }
         renderItem={(item, index, selected) => (
           <Card
             title={
