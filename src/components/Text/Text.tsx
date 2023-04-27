@@ -14,8 +14,10 @@ export interface TextProps {
     | 'body'
     | 'code'
     | 'description'
+    | 'p1'
+    | 'p2'
   strong?: boolean
-  type?: 'success' | 'danger' | 'warning' | 'info' | 'brand' | 'default';
+  type?: 'success' | 'danger' | 'warning' | 'info' | 'brand' | 'default'
   italic?: boolean
   link?: boolean
   href?: string
