@@ -40,7 +40,7 @@ export const Card: React.FC<CardProps> = ({
   extra,
 }) => {
   return (
-    <div className="card">
+    <div className="md-card">
       {!!extra && extra}
       {!!imageUrl && <Image src={imageUrl} className="image" />}
       <div className="card-content">

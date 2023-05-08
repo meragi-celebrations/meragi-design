@@ -18,7 +18,7 @@ export type GridSelectProps<T> = {
   /**
    * The function that renders each item in the GridSelect.
    * This should take an item of type `T`, its index in the `dataSource` array,
-   * and the currently selected item(s) as arguments,
+   * and the currently selected id(s) as arguments,
    * and should return a React node that represents the item.
    */
   renderItem: (item: T, index: number, selected: any) => React.ReactNode
@@ -27,7 +27,7 @@ export type GridSelectProps<T> = {
    */
   span?: number
   /**
-   * The size of each item in the grid.
+   * The size of modal.
    */
   size?: Size
   /**
@@ -37,10 +37,10 @@ export type GridSelectProps<T> = {
   defaultSelected?: any[]
   /**
    * Callback function to handle selection changes.
-   * This should take the newly selected item of type `T` and the previously selected item(s)
+   * This should take the newly selected item of type `T` and the selected id(s)
    * as arguments, and should not return anything.
    */
-  onChange?: (item: T, prevSelected: any) => void
+  onChange?: (item: T, selected: any) => void
   /**
    * The title of the GridSelect, which can be either a string or a React node.
    */
